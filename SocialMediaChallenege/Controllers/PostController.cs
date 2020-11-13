@@ -20,13 +20,11 @@ namespace SocialMediaChallenege.Controllers
         {
             if (ModelState.IsValid)
             {
-               
-
-
-                //    Comment comment = await _context.Comment.FindAsync(post.CommentID);
+               // Comment comment = await _context.Comment.FindAsync(post.Comment);
                 //if (comment == null)
                 //{
-                //    return BadRequest("No comments on this post yet");
+                //    return post.CommentID;
+                //        //("No comments on this post yet");
                 //}
 
                 _context.Post.Add(post);
@@ -41,6 +39,17 @@ namespace SocialMediaChallenege.Controllers
         {
             List<Post> posts = await _context.Post.ToListAsync();
             return Ok(posts);
+        }
+        // GET BY ID
+        [HttpGet]
+        public async Task<IHttpActionResult> GetById(int id)
+        {
+            Post post = await _context.Post.FindAsync(id);
+            if (post != null)
+            {
+                return Ok(post); // 200
+            }
+            return NotFound(); // 404
         }
         //public IEnumerable<string> Get()
         //{

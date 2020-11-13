@@ -17,6 +17,7 @@ namespace SocialMediaChallenege.Controllers
         [HttpPost]
         public async Task<IHttpActionResult> Post(Comment model)
         {
+            //Reply reply = await _context.Reply.FindAsync(Comment.Reply);
             if (ModelState.IsValid)
             {
                 _context.Comment.Add(model);
@@ -33,6 +34,8 @@ namespace SocialMediaChallenege.Controllers
         public async Task<IHttpActionResult> Get()
         {
             List<Comment> comments = await _context.Comment.ToListAsync();
+            
+
             /*  .Select(r => new Comment()
               {
                   Id = r.Id,
@@ -43,6 +46,17 @@ namespace SocialMediaChallenege.Controllers
                  // CommentName = r.Comment.Name,
               })*/
             return Ok(comments);
+        }
+        // GET BY ID
+        [HttpGet]
+        public async Task<IHttpActionResult> GetById(int id)
+        {
+            Comment comment = await _context.Comment.FindAsync(id);
+            if (comment != null)
+            {
+                return Ok(comment); // 200
+            }
+            return NotFound(); // 404
         }
 
         // GET Ratings by comment

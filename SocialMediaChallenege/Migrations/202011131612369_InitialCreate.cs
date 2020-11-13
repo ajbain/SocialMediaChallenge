@@ -13,8 +13,11 @@ namespace SocialMediaChallenege.Migrations
                     {
                         Id = c.Int(nullable: false, identity: true),
                         Text = c.String(nullable: false),
+                        PostID = c.Int(nullable: false),
                     })
-                .PrimaryKey(t => t.Id);
+                .PrimaryKey(t => t.Id)
+                .ForeignKey("dbo.Post", t => t.PostID, cascadeDelete: true)
+                .Index(t => t.PostID);
             
             CreateTable(
                 "dbo.Post",
@@ -23,11 +26,27 @@ namespace SocialMediaChallenege.Migrations
                         Id = c.Int(nullable: false, identity: true),
                         Title = c.String(nullable: false),
                         Text = c.String(nullable: false),
-                        CommentID = c.Int(nullable: false),
                     })
-                .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.Comment", t => t.CommentID, cascadeDelete: true)
-                .Index(t => t.CommentID);
+                .PrimaryKey(t => t.Id);
+            
+            CreateTable(
+                "dbo.Like",
+                c => new
+                    {
+                        Id = c.Int(nullable: false, identity: true),
+                        LikedPost = c.String(nullable: false),
+                        Liker = c.Guid(nullable: false),
+                    })
+                .PrimaryKey(t => t.Id);
+            
+            CreateTable(
+                "dbo.Reply",
+                c => new
+                    {
+                        Id = c.Int(nullable: false, identity: true),
+                        ReplyComment = c.String(nullable: false),
+                    })
+                .PrimaryKey(t => t.Id);
             
             CreateTable(
                 "dbo.IdentityRole",
@@ -107,17 +126,19 @@ namespace SocialMediaChallenege.Migrations
             DropForeignKey("dbo.IdentityUserLogin", "ApplicationUser_Id", "dbo.ApplicationUser");
             DropForeignKey("dbo.IdentityUserClaim", "ApplicationUser_Id", "dbo.ApplicationUser");
             DropForeignKey("dbo.IdentityUserRole", "IdentityRole_Id", "dbo.IdentityRole");
-            DropForeignKey("dbo.Post", "CommentID", "dbo.Comment");
+            DropForeignKey("dbo.Comment", "PostID", "dbo.Post");
             DropIndex("dbo.IdentityUserLogin", new[] { "ApplicationUser_Id" });
             DropIndex("dbo.IdentityUserClaim", new[] { "ApplicationUser_Id" });
             DropIndex("dbo.IdentityUserRole", new[] { "ApplicationUser_Id" });
             DropIndex("dbo.IdentityUserRole", new[] { "IdentityRole_Id" });
-            DropIndex("dbo.Post", new[] { "CommentID" });
+            DropIndex("dbo.Comment", new[] { "PostID" });
             DropTable("dbo.IdentityUserLogin");
             DropTable("dbo.IdentityUserClaim");
             DropTable("dbo.ApplicationUser");
             DropTable("dbo.IdentityUserRole");
             DropTable("dbo.IdentityRole");
+            DropTable("dbo.Reply");
+            DropTable("dbo.Like");
             DropTable("dbo.Post");
             DropTable("dbo.Comment");
         }

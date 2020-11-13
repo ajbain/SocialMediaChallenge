@@ -14,6 +14,9 @@ namespace SocialMediaChallenege.Models
         [Required]
         public string ReplyComment { get; set; }
 
-       
+        [ForeignKey(nameof(Comment))]
+        public int CommentID { get; set; }
+
+        public virtual Comment Comment { get; set; }
     }
 }
