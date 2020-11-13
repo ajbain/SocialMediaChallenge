@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
 
@@ -9,11 +10,25 @@ namespace SocialMediaChallenege.Models
     public class Comment
     {
         [Key]
+        
         public int Id { get; set; }
         [Required]
         public string Text { get; set; }
 
+        [ForeignKey(nameof(Post))]
+        public int PostID { get; set; }
 
+        public virtual Post Post { get; set; }
+        public virtual List<Reply> Reply { get; set; }
+
+        //[ForeignKey("User")]
+        //public Guid Author { get; set; }
+        //public virtual ApplicationUser User { get; set; }
+
+        public Guid AuthorId { get; set; }
+        
+
+       // public virtual List<ApplicationUser> Author { get; set; }
         //[Required]
 
         //public Guid Author { get; set; }
