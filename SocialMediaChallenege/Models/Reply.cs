@@ -7,21 +7,13 @@ using System.Web;
 
 namespace SocialMediaChallenege.Models
 {
-    public class Post
+    public class Reply
     {
         [Key]
         public int Id { get; set; }
-
         [Required]
-        [MinLength(2, ErrorMessage = "This is too short of a title!")]
-        public string Title { get; set; }
+        public string ReplyComment { get; set; }
 
-
-        [Required]
-        public string Text { get; set; }
-
-      
-
-
+       
     }
 }

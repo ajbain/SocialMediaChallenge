@@ -20,6 +20,9 @@ namespace SocialMediaChallenege.Controllers
         {
             if (ModelState.IsValid)
             {
+               
+
+
                 //    Comment comment = await _context.Comment.FindAsync(post.CommentID);
                 //if (comment == null)
                 //{

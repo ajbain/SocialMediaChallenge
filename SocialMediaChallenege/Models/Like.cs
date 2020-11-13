@@ -7,21 +7,16 @@ using System.Web;
 
 namespace SocialMediaChallenege.Models
 {
-    public class Post
+    public class Like
     {
+        
         [Key]
         public int Id { get; set; }
-
         [Required]
-        [MinLength(2, ErrorMessage = "This is too short of a title!")]
-        public string Title { get; set; }
+        public string LikedPost { get; set; }
+        
+        public Guid Liker { get; set; }
 
-
-        [Required]
-        public string Text { get; set; }
-
-      
-
-
+       
     }
 }
