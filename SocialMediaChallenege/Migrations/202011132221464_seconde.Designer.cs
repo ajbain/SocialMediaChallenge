@@ -7,13 +7,13 @@ namespace SocialMediaChallenege.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class AddedReplyToComment : IMigrationMetadata
+    public sealed partial class seconde : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(AddedReplyToComment));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(seconde));
         
         string IMigrationMetadata.Id
         {
-            get { return "202011131630535_AddedReplyToComment"; }
+            get { return "202011132221464_seconde"; }
         }
         
         string IMigrationMetadata.Source

@@ -7,13 +7,13 @@ namespace SocialMediaChallenege.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class InitialCreate : IMigrationMetadata
+    public sealed partial class firstmigration : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(InitialCreate));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(firstmigration));
         
         string IMigrationMetadata.Id
         {
-            get { return "202011131612369_InitialCreate"; }
+            get { return "202011132209397_firstmigration"; }
         }
         
         string IMigrationMetadata.Source

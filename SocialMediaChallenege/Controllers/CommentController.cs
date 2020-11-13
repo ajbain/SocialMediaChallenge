@@ -1,4 +1,5 @@
-﻿using SocialMediaChallenege.Models;
+﻿using Microsoft.AspNet.Identity;
+using SocialMediaChallenege.Models;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -17,9 +18,12 @@ namespace SocialMediaChallenege.Controllers
         [HttpPost]
         public async Task<IHttpActionResult> Post(Comment model)
         {
-            //Reply reply = await _context.Reply.FindAsync(Comment.Reply);
+            List<Reply> replies = await _context.Reply.ToListAsync();
+
             if (ModelState.IsValid)
             {
+                var userId = Guid.Parse(User.Identity.GetUserId());
+                model.AuthorId = userId;
                 _context.Comment.Add(model);
                 await _context.SaveChangesAsync();
 
@@ -34,7 +38,7 @@ namespace SocialMediaChallenege.Controllers
         public async Task<IHttpActionResult> Get()
         {
             List<Comment> comments = await _context.Comment.ToListAsync();
-            
+
 
             /*  .Select(r => new Comment()
               {

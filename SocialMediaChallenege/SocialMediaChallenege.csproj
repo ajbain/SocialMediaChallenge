@@ -215,13 +215,13 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202011131612369_InitialCreate.cs" />
-    <Compile Include="Migrations\202011131612369_InitialCreate.Designer.cs">
-      <DependentUpon>202011131612369_InitialCreate.cs</DependentUpon>
+    <Compile Include="Migrations\202011132209397_firstmigration.cs" />
+    <Compile Include="Migrations\202011132209397_firstmigration.Designer.cs">
+      <DependentUpon>202011132209397_firstmigration.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202011131630535_AddedReplyToComment.cs" />
-    <Compile Include="Migrations\202011131630535_AddedReplyToComment.Designer.cs">
-      <DependentUpon>202011131630535_AddedReplyToComment.cs</DependentUpon>
+    <Compile Include="Migrations\202011132221464_seconde.cs" />
+    <Compile Include="Migrations\202011132221464_seconde.Designer.cs">
+      <DependentUpon>202011132221464_seconde.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
@@ -325,11 +325,11 @@
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202011131612369_InitialCreate.resx">
-      <DependentUpon>202011131612369_InitialCreate.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202011132209397_firstmigration.resx">
+      <DependentUpon>202011132209397_firstmigration.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202011131630535_AddedReplyToComment.resx">
-      <DependentUpon>202011131630535_AddedReplyToComment.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202011132221464_seconde.resx">
+      <DependentUpon>202011132221464_seconde.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

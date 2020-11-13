@@ -14,9 +14,11 @@ namespace SocialMediaChallenege.Models
         public int Id { get; set; }
         [Required]
         public string LikedPost { get; set; }
-        
-        public Guid Liker { get; set; }
 
-       
+        //[ForeignKey("User")]
+        public Guid Author { get; set; }
+       // public virtual ApplicationUser User { get; set; }
+
+
     }
 }

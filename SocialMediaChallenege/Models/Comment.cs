@@ -21,7 +21,14 @@ namespace SocialMediaChallenege.Models
         public virtual Post Post { get; set; }
         public virtual List<Reply> Reply { get; set; }
 
+        //[ForeignKey("User")]
+        //public Guid Author { get; set; }
+        //public virtual ApplicationUser User { get; set; }
 
+        public Guid AuthorId { get; set; }
+        
+
+       // public virtual List<ApplicationUser> Author { get; set; }
         //[Required]
 
         //public Guid Author { get; set; }

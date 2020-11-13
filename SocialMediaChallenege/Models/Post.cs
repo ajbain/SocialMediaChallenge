@@ -22,11 +22,9 @@ namespace SocialMediaChallenege.Models
 
         public virtual List<Comment> Comment {get; set;}
 
-       // public virtual List<ApplicationUser> Author { get; set;  }
-
-        
-      
-
+       // [ForeignKey("User")]
+        public Guid Author { get; set; }
+       // public virtual ApplicationUser User { get; set; }
 
     }
 }

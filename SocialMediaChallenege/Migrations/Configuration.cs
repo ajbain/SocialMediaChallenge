@@ -10,7 +10,6 @@ namespace SocialMediaChallenege.Migrations
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
-            ContextKey = "SocialMediaChallenege.Models.ApplicationDbContext";
         }
 
         protected override void Seed(SocialMediaChallenege.Models.ApplicationDbContext context)

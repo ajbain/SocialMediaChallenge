@@ -37,7 +37,7 @@ namespace SocialMediaChallenege.Models
         public DbSet<Like> Likes { get; set; }
         public DbSet<Comment> Comment { get; set; }
         public DbSet<Reply> Reply { get; set; }
-
+        //public DbSet<User> User { get; set; }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder

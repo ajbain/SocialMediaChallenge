@@ -16,7 +16,7 @@ namespace SocialMediaChallenege.Controllers
         private readonly ApplicationDbContext _context = new ApplicationDbContext();
         // POST
         [HttpPost]
-        public async Task<IHttpActionResult> PostRating(Reply model)
+        public async Task<IHttpActionResult> Post(Reply model)
         {
             if (ModelState.IsValid)
             {
