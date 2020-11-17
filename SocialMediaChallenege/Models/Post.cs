@@ -20,11 +20,11 @@ namespace SocialMediaChallenege.Models
         [Required]
         public string Text { get; set; }
 
-        public int CommentID { get; set; }
+        //public int CommentID { get; set; }
 
 
-        [ForeignKey(nameof(CommentID))]
-        public virtual Comment Comment { get; set; }
+        //[ForeignKey(nameof(CommentID))]
+        //public virtual Comment Comment { get; set; }
 
         //[ForeignKey(nameof(ApplicationUser.Email))]
         //public string Author { get; set; }
